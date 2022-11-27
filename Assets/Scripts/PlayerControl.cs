@@ -55,7 +55,7 @@ public class PlayerControl : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, min.y, max.y);
         
         // mettre à jour la nouvelle position du joueur
-        
+        transform.position = pos;
 
     }
 }
