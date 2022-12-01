@@ -21,6 +21,18 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
+        // Ajouter une touche de controlle pour que le joueur puisse tirer
+        if (Input.GetKeyDown("space"))
+        {
+            // 1re Bulle
+            GameObject bullet01 = (GameObject)Instantiate(PlayerBulletGO); // instancier l'objet la première bulle de la classe PlayerBulletGo
+            bullet01.transform.position = bulletPosition01.transform.position; // fixer la position initial de la bulle
+            
+            // 2eme Bulle
+            GameObject bullet02 = (GameObject)Instantiate(PlayerBulletGO); // instancier la deuxième bulle de la classe PlayerBulletGo
+            bullet02.transform.position = bulletPosition02.transform.position; // fixer la position initial de la bulle
+        }
         
         // Pour le mouvement Droite/Gauche
         float x = Input.GetAxisRaw("Horizontal");
