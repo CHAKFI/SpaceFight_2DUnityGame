@@ -7,8 +7,9 @@ using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
-    
-    
+    public GameObject PlayerBulletGO;
+    public GameObject bulletPosition01;
+    public GameObject bulletPosition02;
     public float speed;
     
     // Start is called before the first frame update
