@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         Invoke("SpawnEnemy",maxSpawnRateInSecond);
-        InvokeRepeating("IncreaseSpawnRate",0f, 30f); // augumenter le taux d'apparution d'enemy
+        InvokeRepeating("IncreaseSpawnRate",0f, 30f); // augumenter le taux d'apparution d'enemy chaque 30sec
     }
 
     // Update is called once per frame
@@ -40,13 +40,13 @@ public class EnemySpawner : MonoBehaviour
     void ScheduleNextEnemySpawn()
     {
         float spawnInNSeconds;
-        if (maxSpawnRateInSecond > 1f)
+        if (maxSpawnRateInSecond > 4f)
         {
-            spawnInNSeconds = Random.Range(1f, maxSpawnRateInSecond);
+            spawnInNSeconds = Random.Range(4f, maxSpawnRateInSecond);
         }
         else
         {
-            spawnInNSeconds = 1f;
+            spawnInNSeconds = 4f;
         }
         
         Invoke("SpawnEnemy",spawnInNSeconds);
@@ -56,12 +56,12 @@ public class EnemySpawner : MonoBehaviour
     // definir la fonction qui augment le niveau des enemy
     void IncreaseSpawnRate()
     {
-        if (maxSpawnRateInSecond > 1f)
+        if (maxSpawnRateInSecond > 4f)
         {
             maxSpawnRateInSecond--;
         }
 
-        if (maxSpawnRateInSecond == 1f)
+        if (maxSpawnRateInSecond == 4f)
         {
             CancelInvoke("IncreaseSpawnRate");
         }
