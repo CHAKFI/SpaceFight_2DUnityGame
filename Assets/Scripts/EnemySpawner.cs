@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
 {
 
     public GameObject EnemyGO; // Enemy Prefabs
-    public float maxSpawnRateInSecond = 5f;
+    float maxSpawnRateInSecond = 5f;
     
     // Start is called before the first frame update
     void Start()
@@ -29,8 +29,8 @@ public class EnemySpawner : MonoBehaviour
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)); // C'est la limite de l'écran en bas à gauche
         Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1)); // C'est la limite de l'écran en haut à droite
 
-        GameObject anEnemy = (GameObject)Instantiate(EnemyGO);
-        anEnemy.transform.position = new Vector2(Random.Range(min.x, min.y), max.y);
+        GameObject anEnemy = (GameObject)Instantiate (EnemyGO);
+        anEnemy.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
         
         ScheduleNextEnemySpawn(); //fonction qui fait apparaître et teleporter les Enemy
 

@@ -25,7 +25,6 @@ public class EnemyControl : MonoBehaviour
         transform.position = position;
 
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0,0)); // C'est la limite de l'écran en bas à gauche
-        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1,1)); // C'est la limite de l'écran en haut à droite
 
         // Detruire Enemy Ship si il dépasse la limite d'ecran en bas
         if (transform.position.y < min.y)
